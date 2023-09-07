@@ -1,7 +1,7 @@
 FROM node:14
 WORKDIR /usr/src/app
-COPY nodeApplication/package*.json ./
+COPY package*.json ./
 RUN npm install
-COPY nodeApplication/. .
+COPY . .
 EXPOSE 4000
 CMD ["npm", "start"]
