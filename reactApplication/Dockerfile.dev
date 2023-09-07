@@ -2,10 +2,10 @@ FROM node:14-alpine
 
 WORKDIR '/usr/app'
 
-COPY reactApplication/package.json .
+COPY package.json .
 
 RUN npm install
 
-COPY reactApplication/. .
+COPY . .
 
 CMD ["npm","start"]
