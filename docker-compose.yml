@@ -1,14 +1,6 @@
 version: '3'
 services:
-  node-app:
-    build:
-      context: .
-      dockerfile: nodeApplication/dockerfile
-    ports:
-      - "4000:80"
-    image: node-app:${BUILD_NUMBER}
-    container_name: node-app_${BUILD_NUMBER}
-  web:
+  react-app:
     build:
       context: .
       dockerfile: reactApplication/Dockerfile.dev
@@ -17,3 +9,13 @@ services:
     volumes:
       - /usr/app/node_modules
       - .:/usr/app
+      
+  node-app:
+    build:
+      context: .
+      dockerfile: nodeApplication/dockerfile
+    ports:
+      - "4000:80"
+    image: node-app:${BUILD_NUMBER}
+    container_name: node-app_${BUILD_NUMBER}
+  
