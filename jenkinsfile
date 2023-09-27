@@ -27,16 +27,16 @@ pipeline {
         stage('Deploy react-app with Docker Compose') {
           steps {
               script {
-                  sh "docker-compose -f final-demo/reactApplication/docker-compose.yml down -v"
-                  sh "docker-compose -f final-demo/reactApplication/docker-compose.yml up -d --build"
+                  sh "docker-compose -f reactApplication/docker-compose.yml down -v"
+                  sh "docker-compose -f reactApplication/docker-compose.yml up -d --build"
               }
           }
         }
         stage('Deploy Node-app with Docker Compose') {
           steps {
               script {
-                  sh "docker-compose -f final-demo/nodeApplication/docker-compose.yml down -v"
-                  sh "docker-compose -f final-demo/nodeApplication/docker-compose.yml up -d --build"
+                  sh "docker-compose -f nodeApplication/docker-compose.yml down -v"
+                  sh "docker-compose -f nodeApplication/docker-compose.yml up -d --build"
               }
           }
         }
