@@ -14,8 +14,6 @@ services:
     build:
       context: .
       dockerfile: nodeApplication/dockerfile
-      args:
-        BUILD_NUMBER: ${BUILD_NUMBER}
     ports:
       - "4000:80"
-    container_name: node-app_${BUILD_NUMBER}
+    container_name: node-app
