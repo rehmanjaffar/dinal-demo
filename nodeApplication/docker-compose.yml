@@ -4,6 +4,8 @@ services:
     build: .
     ports:
       - "4000:80"
-    image: node-app:${BUILD_NUMBER}
-    container_name: node-app_${BUILD_NUMBER}
+    image: node-app
+    container_name: node-app
+    #image: node-app:${BUILD_NUMBER}
+    #container_name: node-app_${BUILD_NUMBER}
     
